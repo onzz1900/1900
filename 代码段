@@ -13,3 +13,51 @@
                 }
             }
         }
+
+
+http://www.cnblogs.com/xwdreamer/archive/2012/06/25/2562828.html
+--查看数据库schema, user 的存储过程
+select * from sys.database_principals
+select * from sys.schemas 
+select * from sys.server_principals
+
+--创建登陆帐户（create login）
+create login dba with password='abcd1234@', default_database=mydb
+
+--为登陆账户创建数据库用户（create user）,在mydb数据库中的security中的user下可以找到新创建的dba
+create user dba for login dba with default_schema=dbo
+
+--通过加入数据库角色，赋予数据库用户“db_owner”权限
+exec sp_addrolemember 'db_owner', 'dba'
+
+--让 SQL Server 登陆帐户“dba”访问多个数据库
+use mydb2
+go
+create user dba for login dba with default_schema=dbo
+go
+exec sp_addrolemember 'db_owner', 'dba'
+go
+
+--禁用登陆帐户
+alter login dba disable
+--启用登陆帐户
+alter login dba enable
+
+--登陆帐户改名
+alter login dba with name=dba_tom
+
+--登陆帐户改密码： 
+alter login dba with password='aabb@ccdd'
+
+--数据库用户改名： 
+alter user dba with name=dba_tom
+
+--更改数据库用户 defult_schema： 
+alter user dba with default_schema=sales
+
+--删除数据库用户： 
+drop user dba
+
+--删除 SQL Server登陆帐户： 
+drop login dba
+复制代码
