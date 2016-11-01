@@ -1,0 +1,7 @@
+alter table student drop constraint c2，要用c2这个约束名。那个sage不是约束名，所以不行。
+如果不知道约束名可以先运行以下语句：
+use 数据库名
+go
+sp_help 表名
+go
+这个语句运行完后你可以从那里找到表中所有约束的名字。然后就想删除哪个就随你了。
