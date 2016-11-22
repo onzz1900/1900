@@ -8,3 +8,10 @@
 
 webapi session：
 http://stackoverflow.com/questions/21999409/web-api-2-session
+
+ASP.NET MVC/ASP.NET WebApi  授权的问题参考链接：
+http://www.cnblogs.com/jesse2013/p/aspnet-identity-claims-based-authentication-and-owin.html#protectcookie
+http://www.bkjia.com/Asp_Netjc/1104683.html
+http://blog.csdn.net/besley/article/details/8516894
+https://github.com/MohammadYounes/MVC5-MixedAuth/issues/20
+http://stackoverflow.com/questions/19977833/anti-forgery-token-issue-mvc-5
